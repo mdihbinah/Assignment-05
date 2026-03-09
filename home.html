@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo | Home</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+
+    <!-- Tailwind and daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awasome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <style>
+        *{
+            font-family: "Outfit", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo max-w-[1600px] m-5 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img class="w-[50px] h-[50px]" src="assets/github-logo.png" alt="">
+                <h3>GitHub Issues Tracker</h3>
+            </div>
+            <div class="flex space-x-3">
+                <input class="btn" type="text" placeholder="Search issues....">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="max-w-[1100px] m-3 mx-auto space-y-5">
+        <div id="tab-section" class="space-x-3">
+            <button class="btn btn-primary">All</button>
+            <button class="btn">Open</button>
+            <button class="btn">Close</button>
+        </div>
+        <div class="space-x-3">
+            <div class="marker-tab bg-[#ECE4FF] rounded-2xl p-3 flex justify-between">
+                <div class="flex items-center ">
+                    <img class="w-[50px] h-[50px] m-3" src="assets/Aperture.png" alt="">
+                    <div class="">
+                        <h3><span id="count">50</span> Issues</h3>
+                        <p>Track and manage your project issues</p>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="flex items-center">
+                        <div class="h-2 w-2 m-2 bg-green-500 rounded-full"></div>
+                        <p>Open</p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="h-2 w-2 m-2 bg-violet-500 rounded-full"></div>
+                        <p> Closed</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="script/commonCode.js"></script>
+    <script src="script/code.js"></script>
+</body>
+</html>
