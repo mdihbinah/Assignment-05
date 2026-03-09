@@ -8,7 +8,7 @@ document.getElementById('login').addEventListener('click', function(){
     const pinNum = pinNumI.value
 
     if (mNum == 'admin' && pinNum == 'admin123'){
-        window.location.assign('../home.html')
+        window.location.assign('./home.html')
     } else{
         alert('Invalid Input....')
         return
