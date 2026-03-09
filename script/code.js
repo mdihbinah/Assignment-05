@@ -5,5 +5,11 @@ tabSection.addEventListener('click', function(event){
      tabBtn.forEach(d => d.classList.remove('btn-primary'))
 
      event.target.classList.add('btn-primary')
+     tab = event.target.innerText
+     f()
 })
 
+
+// cards.addEventListener('click', function(){
+
+// })

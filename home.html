@@ -41,9 +41,9 @@
 
     <section class="max-w-[1100px] m-3 mx-auto space-y-5">
         <div id="tab-section" class="space-x-3">
-            <button class="btn btn-primary">All</button>
-            <button class="btn">Open</button>
-            <button class="btn">Close</button>
+            <button class="btn btn-primary hover:bg-blue-400">All</button>
+            <button class="btn hover:bg-blue-400">Open</button>
+            <button class="btn hover:bg-blue-400">Closed</button>
         </div>
         <div class="space-x-3">
             <div class="marker-tab bg-[#ECE4FF] rounded-2xl p-3 flex justify-between">
@@ -67,32 +67,8 @@
                     
                 </div>
             </div>
-            <div class="cards grid grid-cols-4">
-                    <div class="card p-2 shadow-xl space-y-2">
-                        <div class=" flex justify-between">
-                            <img src="assets/Open-Status.png" alt="">
-                            <h2 class="bg-red-400 p-1 rounded-xl">High</h2>
-                        </div>
-                        <h2 class="text-xl">Fix navigation menu on mobile devices</h2>
-                        <h3 class="opacity-60">The navigation menu doesn't collapse properly on mobile devices...</h3>
-                        <div class="flex justify-between">
-                            <p class="bg-red-400  p-2 rounded-[5px]">Bug</p>
-                            <p class="bg-yellow-200  p-2 rounded-[5px]">Help Wanted</p>
-                        </div>
-
-                        <hr>
-
-                        <div class="">
-                            <div class="flex justify-between">
-                                <p>Created at</p>
-                                <p>Date</p>
-                            </div>
-                            <div class="flex justify-between">
-                                <p>Updated at</p>
-                                <p>Date</p>
-                            </div>
-                        </div>
-                    </div>
+            <div id="cards" class="grid grid-cols-4 gap-5 mt-5">
+                
             </div>
         </div>
     </section>
