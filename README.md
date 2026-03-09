@@ -1,6 +1,6 @@
-Ans. 01:
+* Ans. 01:
 
-Differences of var, let and const is:
+** Differences of var, let and const is:
 
 var:
 It is function scoped.
