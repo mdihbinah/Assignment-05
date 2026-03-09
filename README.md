@@ -15,10 +15,10 @@
 - It hoisted but not initialized TDZ (Temporal Dead Zone)
 
 ## const:
-It is block scoped.
-It can not redeclared.
-It can not reassigned.
-It Must be initialized during declaration.
+- It is block scoped.
+- It can not redeclared.
+- It can not reassigned.
+- It Must be initialized during declaration.
         
 # Ans. 02:
    
@@ -29,21 +29,21 @@ The spread operator (...) expands arrays, objects, or iterables into individual 
 ## Differences of map(), filter(), and forEach() is:
 
 ## map():
-It transform each element.
-It returns a new array of the same length.
-It unchanged orginal array.
+- It transform each element.
+- It returns a new array of the same length.
+- It unchanged orginal array.
 
 
 ## filter():
-It select elements based on a condition.
-It returns a new array of may be different length.
-It unchanged orginal array.
+- It select elements based on a condition.
+- It returns a new array of may be different length.
+- It unchanged orginal array.
 
 ## filter():
 
-It executes a function for each element.
-It does not return array. 
-It unchanged orginal array. 
+- It executes a function for each element.
+- It does not return array. 
+- It unchanged orginal array. 
 
 
 
