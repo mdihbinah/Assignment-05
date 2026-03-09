@@ -6,8 +6,18 @@ tabSection.addEventListener('click', function(event){
 
      event.target.classList.add('btn-primary')
      tab = event.target.innerText
+
      f()
+     
+     if(tab == 'All'){
+          count.innerText = 50
+     } else if (tab == 'Open'){
+          count.innerText = openList.length
+     } else if (tab == 'Closed'){
+          count.innerText = closedList.length
+     }
 })
+
 
 
 // cards.addEventListener('click', function(){

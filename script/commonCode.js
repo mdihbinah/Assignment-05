@@ -1,5 +1,13 @@
 let tab = 'Open'
 
+const tabSection = document.getElementById('tab-section')
+const cards = document.getElementById('cards')
+const count = document.getElementById('count')
+
+const search = document.getElementById('search')
+const searchInput = document.getElementById('search-input')
+
+
 const openList = []
 const closedList = []
 
@@ -16,12 +24,6 @@ function load(){
     }})
 }
 load()
-
-const tabSection = document.getElementById('tab-section')
-const cards = document.getElementById('cards')
-
-
-
 
 function f(){
     fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
@@ -48,7 +50,7 @@ const label2 = `<p class="max-h-8 bg-green-400  p-1 rounded-[5px]">${element.lab
     const formattedDate2 = make_date(element.updatedAt)
 
         newEle.innerHTML = `
-<div class="card min-h-[350px] p-2 shadow-xl space-y-2 border-t-3 border-t-${element.status == 'open'? 'green' : 'violet'}-500">
+<div onclick="loadModal(${element.id})" class="card min-h-[350px] p-2 shadow-xl space-y-2 border-t-3 border-t-${element.status == 'open'? 'green' : 'violet'}-500">
 
     <div class=" flex justify-between">
         <img src="assets/${element.status == 'open'? 'Open-Status.png': 'Closed- Status .png'}" alt="">
@@ -85,4 +87,46 @@ function make_date(d){
     const date = new Date(d);
     // "en-US" ensures the MM/DD/YYYY format
     return date.toLocaleDateString('en-US'); 
+}
+
+function loadModal(id){
+    fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
+    .then(data => data.json())
+    .then(issues => {
+        displayModal(issues.data)
+    })
+}
+
+function displayModal(data){
+    const modalContainer = document.getElementById('modal-container')
+
+    const label1 = `<p class="max-h-8 bg-red-400  p-1 rounded-[5px]">${data.labels[0]}</p> <p class="bg-yellow-200  p-1 rounded-[5px]">Help ${data.labels[1]}</p>`
+    const label2 = `<p class="max-h-8 bg-green-400  p-1 rounded-[5px]">${data.labels[0]}</p>`
+
+    const formattedDate1 = make_date(data.createdAt)
+    const formattedDate2 = make_date(data.updatedAt)
+
+   modalContainer.innerHTML =`
+<div class="space-y-3">
+    <h2 class="text-xl">${data.title}</h2>
+    <div class="flex items-center">
+        <p class="max-h-8 bg-green-400  p-1 rounded-[5px]">${data.status}</p>
+        <div class="h-2 w-2 m-2 bg-gray-200 rounded-full"></div>
+        <p class="max-h-8 opacity-70  p-1 rounded-[5px]">${data.status} by ${data.author}</p>
+        <div class="h-2 w-2 m-2 bg-gray-200 rounded-full"></div>
+        <p>${formattedDate2}</p>
+    </div>
+    <div class="flex justify-between">
+        ${data.labels.length == 2? label1: label2}
+    </div>
+    <h3 class="opacity-60">${data.description}</h3>
+    <div class="flex justify-around bg-[#64748b30] rounded-2xl p-3">
+        <div class="">Assignee: <br>${data.author}</div>
+        <div class="">Priority:<h2 class="bg-red-400 p-1 text-center rounded-xl">${data.priority}</h2></div>
+    </div>
+</div>
+   `
+
+
+    document.getElementById('modal').showModal()
 }
