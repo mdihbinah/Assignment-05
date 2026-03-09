@@ -3,16 +3,16 @@
 ## Differences of var, let and const is:
 
 ## var:
-It is function scoped.
-It can be redeclared.
-It can be reassigned.
-It hoisted  with undefined.
+- It is function scoped.
+- It can be redeclared.
+- It can be reassigned.
+- It hoisted  with undefined.
 
 ## let:
-It is block  scoped.
-It can be redeclared.
-It can be reassigned.
-It hoisted but not initialized TDZ (Temporal Dead Zone)
+- It is block  scoped.
+- It can be redeclared.
+- It can be reassigned.
+- It hoisted but not initialized TDZ (Temporal Dead Zone)
 
 ## const:
 It is block scoped.
