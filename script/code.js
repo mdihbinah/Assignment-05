@@ -18,7 +18,9 @@ tabSection.addEventListener('click', function(event){
      }
 })
 
-
+search.addEventListener('click', function(e){
+     searchF(searchInput.value)
+})
 
 // cards.addEventListener('click', function(){
 
